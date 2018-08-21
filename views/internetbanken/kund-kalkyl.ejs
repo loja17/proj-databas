@@ -1,0 +1,25 @@
+<%- include("header", {title: title}); %>
+
+<%- include("header4", {title: title}); %>
+
+<h1>Mina konton med summerad ränta</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Kontonummer</th>
+        <th>Balans</th>
+        <th>Summerad ränta</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.account_id %></td>
+        <td><%= row.accountNumber %></td>
+        <td><%= row.balance %></td>
+        <td><%= row.interestSum %></td>
+    </tr>
+<% }; %>
+</table>
+
+
+<%- include("footer"); %>

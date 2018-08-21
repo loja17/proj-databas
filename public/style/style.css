@@ -1,0 +1,106 @@
+html {
+    padding: 10px auto;
+    background: #142739;
+}
+
+body {
+    padding: 10px auto;
+    margin: 8px auto;
+    background: #fff;
+    width: 800px;
+}
+
+nav {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #21415e;
+    color: white;
+}
+
+article {
+    padding: 15px;
+    min-height: 500px;
+}
+
+ul li a,
+ul li a:visited,
+p a {
+    color: black;
+}
+
+p a:visited {
+    color: black;
+}
+
+nav .selected {
+    background-color: black;
+}
+
+nav a {
+    float: left;
+}
+
+nav a,
+a:visited {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: black;
+}
+
+header,
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p,
+p a,
+h2,
+h3,
+th,
+th a,
+th a:visited,
+td,
+td a,
+td a:visited,
+ul li,
+ul li a,
+ul li a:visited {
+    font-family: 'Open sans', sans-serif;
+    color: black;
+}
+
+td {
+    font-size: 12px;
+}
+
+footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background: #ecf2f8;
+}
+
+
+table {
+    border: 1px solid #ccc;
+}
+
+th {
+    border-bottom: 1px solid #999;
+}
+
+td {
+    padding: 0.2em;
+}
+
+.label-left {
+    border: 1px solid #ccc;
+    font-family: 'Lato', sans-serif;
+    color: black;
+}

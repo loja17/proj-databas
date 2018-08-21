@@ -1,0 +1,46 @@
+<%- include("header", {title: title}); %>
+
+<%- include("header2", {title: title}); %>
+
+
+<h1>Lägg till ägare till konto <%= Id %></h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Kontonummer</th>
+        <th>Balans</th>
+        <th>Delas med</th>
+    </tr>
+<% for (const row of res1) { %>
+    <tr>
+        <td><%= row.id %></td>
+        <td><%= row.accountNumber %></td>
+        <td><%= row.balance %></td>
+        <td><%= row.shared %></td>
+    </tr>
+<% }; %>
+</table>
+
+<p>Klicka på någon av kunderna nedan för att lägga till ägare till kontot.</p>
+
+<table>
+    <tr>
+        <th></th>
+        <th>Namn</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td>
+            <form method= "post" action="/internetbanken/admin/konton/nyagare/<%= Id %>/<%= row.id %>">
+                <input type="submit" value="Välj">
+            </form>
+        </td>
+        <td><%= row.availableOwner %></td>
+
+    </tr>
+<% }; %>
+</table>
+
+
+<%- include("footer"); %>

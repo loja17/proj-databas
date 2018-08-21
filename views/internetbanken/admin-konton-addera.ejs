@@ -1,0 +1,26 @@
+<%- include("header", {title: title}); %>
+
+<%- include("header2", {title: title}); %>
+
+
+<h1>Skapa konto</h1>
+
+
+<form class="label-left" method="post" onsubmit="required()">
+    <fieldset>
+        <legend>Nytt konto</legend>
+
+        <label for="accountNumber">Kontonummer (nnn-nnnn):</label><br>
+        <input id="accountNumber" type="text" name="accountNumber"><br>
+
+        <label for="balance">Balans:</label><br>
+        <input id="balance" type="number" name="balance"><br>
+
+        <label for="accountOwner">Ägare (id):</label><br>
+        <input id="accountOwner" type="number" name="accountOwner"><br>
+
+        <input type="submit" name="doit" value="Lägg till">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

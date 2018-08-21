@@ -1,0 +1,35 @@
+<%- include("header", {title: title}); %>
+
+<%- include("header2", {title: title}); %>
+
+
+<h1>Kunder</h1>
+
+<p>Nedan visas internetbankens kunder.</p>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Namn</th>
+        <th>Född</th>
+        <th>Adress</th>
+        <th>Konton</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><a href="/internetbanken/admin/konton/<%= row.id %>"><%= row.id %></td>
+        <td><%= row.name %></td>
+        <td><%= row.born.toDateString() %></td>
+        <td><%= row.address %></td>
+        <td><%= row.accountNumbers %></td>
+    </tr>
+<% }; %>
+</table>
+
+<form action="/internetbanken/admin/kunder/ny">
+    <input type="submit" value="Lägg till kund">
+</form>
+
+<!--<a href="/internetbanken/admin-kunder-addera">Lägg till ny kund</a>-->
+
+<%- include("footer"); %>

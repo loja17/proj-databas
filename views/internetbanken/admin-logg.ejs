@@ -1,0 +1,31 @@
+<%- include("header", {title: title}); %>
+
+<%- include("header2", {title: title}); %>
+
+
+<h1>Logg</h1>
+
+
+<p>Nedan visas bankens överföringar.</p>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Kontonummer</th>
+        <th>Ny balans</th>
+        <th>Förändring</th>
+        <th>Tid</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.id %></td>
+        <td><%= row.accountNumber %></td>
+        <td><%= row.balance %></td>
+        <td><%= row.amountChange %></td>
+        <td><%= row.logTime.toLocaleString() %></td>
+    </tr>
+<% }; %>
+</table>
+
+
+<%- include("footer"); %>

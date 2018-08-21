@@ -1,0 +1,51 @@
+<%- include("header", {title: title}); %>
+
+<%- include("header2", {title: title}); %>
+
+
+<h1>Konton</h1>
+
+
+<p>Nedan visas bankens konton och räntekalkyl.</p>
+
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Kontonummer</th>
+        <th>Balans</th>
+        <th>Ägare</th>
+        <th></th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.id %></td>
+        <td><%= row.accountNumber %></td>
+        <td><%= row.balance %></td>
+        <td><%= row.shared %></td>
+        <td>
+            <form action="/internetbanken/admin/konton/nyagare/<%= row.id %>">
+                <input type="submit" value="Lägg till ägare">
+            </form>
+        </td>
+    </tr>
+<% }; %>
+    
+    <tr></tr>
+
+    <tr>
+        <th>Bankens</th> 
+        <th>totalsumma:</th> 
+        <th><%= Totalsum %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+</table>
+
+<form action="/internetbanken/admin/konton/nytt">
+    <input type="submit" value="Lägg till konto">
+</form>
+
+<%- include("footer"); %>

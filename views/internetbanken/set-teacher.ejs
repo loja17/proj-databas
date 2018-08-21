@@ -1,0 +1,32 @@
+<%- include("header", {title: title}); %>
+
+<h1>Tilldela kursansvarig</h1>
+
+
+<p>Information om kurstillfälle med id <%= Kursansvarig %>.</p>
+
+<% res = res[0] %>
+<form class="label-left" method="post" action="/skolan/kurstillfallen/set-teacher">
+    <fieldset>
+        <legend>Lägg till kursansvarig</legend>
+
+        <label for="id">Id:</label><br>
+        <input id="id" type="number" name="id" readonly value="<%= res.id %>"><br>
+
+        <label for=kurskod>Kurskod:</label><br>
+        <input id="kurskod" type="text" name="namn" readonly value="<%= res.kurskod %>"><br>
+
+        <label for="adress">Kursansvarig (akronym):</label><br>
+        <input id="kursansvarig" type="text" name="kursansvarig" value="<%= res.kursansvarig %>"><br>
+
+        <label for="lasperiod">Läsperiod:</label><br>
+        <input id="nummer" type="number" name="nummer" readonly value="<%= res.lasperiod %>"><br>
+
+        <label for="programtillfalle">Programtillfälle:</label><br>
+        <input id="programtillfalle" type="text" name="programtillfalle" readonly value="<%= res.programtillfalle %>"><br>
+
+        <input type="submit" name="doit" value="Lägg till">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

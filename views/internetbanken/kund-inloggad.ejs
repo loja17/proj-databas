@@ -1,0 +1,14 @@
+<%- include("header", {title: title}); %>
+
+<%- include("header4", {title: title}); %>
+
+<h1>Välkommen <%= Namn %>!</h1>
+
+<p>I menyn ovan kan du komma åt bankonton och föra över pengar samt visa räntan för dina konton.</p>
+
+<form action="/internetbanken/kund/">
+    <input type="submit" value="Logga ut">
+</form>
+
+
+<%- include("footer"); %>

@@ -1,0 +1,27 @@
+<%- include("header", {title: title}); %>
+
+<h1>Min sida</h1>
+
+<p>Klicka på ditt id nedan för att komma åt dina bankkonton.</p>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Namn</th>
+        <th>Född</th>
+        <th>Adress</th>
+        <th>Kontonummer</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><a href="/internetbanken/kund/inloggad/<%= row.id %>"><%= row.id %></td>
+        <td><%= row.name %></td>
+        <td><%= row.born.toDateString() %></td>
+        <td><%= row.address %></td>
+        <td><%= row.accountNumbers %></td>
+    </tr>
+<% }; %>
+</table>
+
+
+<%- include("footer"); %>

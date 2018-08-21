@@ -1,0 +1,30 @@
+<%- include("header", {title: title}); %>
+
+<%- include("header2", {title: title}); %>
+
+
+<h1><%= Namn %>s (<%= Id %>) bankkonton</h1>
+
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Kontonummer</th>
+        <th>Balans</th>
+        <th>Delas med</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.account_id %></td>
+        <td><%= row.accountNumber %></td>
+        <td><%= row.balance %></td>
+        <td><%= row.shared %></td>
+    </tr>
+<% }; %>
+</table>
+
+<form action="/internetbanken/admin/kunder">
+    <input type="submit" value="Tillbaka">
+</form>
+
+<%- include("footer"); %>

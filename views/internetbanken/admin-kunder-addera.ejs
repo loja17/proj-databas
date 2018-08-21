@@ -1,0 +1,33 @@
+<%- include("header", {title: title}); %>
+
+<%- include("header2", {title: title}); %>
+
+
+<h1>Skapa kund</h1>
+
+
+<form class="label-left" method="post" onsubmit="required()">
+    <fieldset>
+        <legend>Ny kund</legend>
+
+        <label for="name">För- och efternamn:</label><br>        
+        <input id="name" type="text" name="name"><br>
+
+        <label for="born">Född:</label><br>
+        <input id="born" type="date" name="born"><br>
+
+        <label for="address">Adress:</label><br>
+        <input id="address" type="text" name="address"><br>
+
+        <label for="city">Stad:</label><br>
+        <input id="city" type="text" name="city"><br>
+
+        <label for="pin">Pinkod:</label><br>
+        <input id="pin" type="number" name="pin"><br>
+
+        <input type="submit" name="doit" value="Lägg till">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>
+

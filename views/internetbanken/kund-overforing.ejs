@@ -1,0 +1,43 @@
+<%- include("header", {title: title}); %>
+
+<%- include("header4", {title: title}); %>
+
+<h1>Mina konton</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Kontonummer</th>
+        <th>Balans</th>
+        <th>Delas med</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.account_id %></td>
+        <td><%= row.accountNumber %></td>
+        <td><%= row.balance %></td>
+        <td><%= row.shared %></td>
+    </tr>
+<% }; %>
+</table>
+
+<br>
+<br>
+
+<form class="label-left" method="post" onsubmit="required()">
+    <fieldset>
+        <legend>Överföring mellan konton</legend>
+
+        <label for="accountNumber1">Från konto (nnn-nnnn):</label><br>
+        <input id="accountNumber1" type="text" name="accountNumber1"><br>
+
+        <label for="accountNumber2">Till konto (nnn-nnnn):</label><br>
+        <input id="accountNumber2" type="text" name="accountNumber2"><br>
+
+        <label for="amount">Summa:</label><br>
+        <input id="amount" type="decimal" name="amount"><br>
+
+        <input type="submit" name="doit" value="Ok">
+    </fieldset>
+</form>
+<%- include("footer"); %>

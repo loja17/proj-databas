@@ -1,0 +1,28 @@
+<%- include("header", {title: title}); %>
+
+<%- include("header4", {title: title}); %>
+
+<h1>Mina konton</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Kontonummer</th>
+        <th>Balans</th>
+        <th>Delas med</th>
+    </tr>
+<% for (const row of res) { %>
+    <tr>
+        <td><%= row.account_id %></td>
+        <td><%= row.accountNumber %></td>
+        <td><%= row.balance %></td>
+        <td><%= row.shared %></td>
+    </tr>
+<% }; %>
+</table>
+
+<form action="/internetbanken/kund/inloggad/overforing/<%= Id %>">
+    <input type="submit" value="Överföring">
+</form>
+
+<%- include("footer"); %>
